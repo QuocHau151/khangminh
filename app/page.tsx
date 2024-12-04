@@ -2,9 +2,9 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
+import { Switch } from "@/components/ui/switch";
 
 import {
-  CheckCircle,
   Star,
   ChevronRight,
   ArrowRight,
@@ -27,235 +27,25 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { news, partners, steps, testimonials, products } from "@/common/data";
 
 const OPTIONS: EmblaOptionsType = {};
 const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
-const steps = [
-  {
-    number: "01",
-    title: "Khách hàng đặt hàng",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    number: "02",
-    title: "Tiếp nhận đơn hàng",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    number: "03",
-    title: "Đóng gói hàng hoá",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    number: "04",
-    title: "Gửi đến khách hàng",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-];
-const products = [
-  {
-    id: 1,
-    name: "Đèn Led 1",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 2,
-    name: "Đèn Led 1",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 3,
-    name: "Đèn Led 1",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-];
-const testimonials = [
-  {
-    name: "Laura Mitchell",
-    role: "Marketing Manager, Rui Company",
-    image: "/placeholder.svg",
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    name: "Emma Johnson",
-    role: "Event Planner, Right Zone",
-    image: "/placeholder.svg",
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    name: "Sarah Wilson",
-    role: "CEO, Tech Solutions",
-    image: "/placeholder.svg",
-    quote:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-];
-const news = [
-  {
-    id: 1,
-    date: "July 29, 2024",
-    title: "Chất lượng sản phẩm của Khang Minh Lighting",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 2,
-    date: "July 29, 2024",
-    title: "Chất lượng sản phẩm của Khang Minh Lighting",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 3,
-    date: "July 29, 2024",
-    title: "Chất lượng sản phẩm của Khang Minh Lighting",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-  {
-    id: 4,
-    date: "July 29, 2024",
-    title: "Chất lượng sản phẩm của Khang Minh Lighting",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "/placeholder.svg",
-  },
-];
-const partners = [
-  {
-    id: 1,
-    name: "Partner 1",
-    logo: "/placeholder.svg",
-  },
-  {
-    id: 2,
-    name: "Partner 2",
-    logo: "/placeholder.svg",
-  },
-  {
-    id: 3,
-    name: "Partner 3",
-    logo: "/placeholder.svg",
-  },
-  {
-    id: 4,
-    name: "Partner 4",
-    logo: "/placeholder.svg",
-  },
-  {
-    id: 5,
-    name: "Partner 5",
-    logo: "/placeholder.svg",
-  },
-];
+
 export default function Home() {
   return (
     <>
       <Header />
       <EmblaCarousel slides={SLIDES} options={OPTIONS} />
-      <section className="mt-10 w-full bg-gradient-to-b from-purple-50/50 to-white">
-        <div className="mx-auto max-w-7xl px-4 py-12">
-          <div className="flex flex-col gap-12 lg:flex-row">
-            {/* Left column with images */}
-            <div className="relative w-full lg:w-1/2">
-              {/* Main image */}
-              <div className="aspect-square w-full rounded-lg bg-gray-300" />
-
-              {/* Experience badge */}
-              <div className="absolute left-6 top-6 max-w-[200px] rounded-lg bg-orange-500 p-4 text-white">
-                <div className="flex items-center gap-2 text-3xl font-bold">
-                  10+
-                  <span className="text-yellow-300">☀</span>
-                </div>
-                <div className="text-sm font-medium">Năm kinh nghiệm</div>
-                <div className="mt-1 text-xs">
-                  Cung cấp sản phẩm thiết bị
-                  <br />
-                  công nghệ thông minh
-                </div>
-              </div>
-
-              {/* Secondary image */}
-              <div className="absolute -bottom-8 right-0 aspect-video w-2/3 rounded-lg bg-gray-400" />
-            </div>
-
-            {/* Right column with content */}
-            <div className="w-full pt-8 lg:w-1/2 lg:pt-0">
-              <div className="mb-4 flex items-center gap-2 text-primary">
-                <span className="text-xl">✧</span>
-                <span>Về Chúng Tôi</span>
-              </div>
-
-              <h1 className="mb-8 text-4xl font-bold text-main">
-                Công Ty TNHH
-                <br />
-                Khang Minh Lighting
-              </h1>
-
-              <p className="mb-8 text-sm leading-relaxed text-gray-600">
-                Công ty TNHH Khang Minh Lighting là đơn vị chuyên cung cấp các
-                giải pháp chiếu sáng hiện đại, tiết kiệm năng lượng và thân
-                thiện với môi trường. Với hơn X năm kinh nghiệm trong ngành,
-                chúng tôi cung cấp đa dạng các sản phẩm đèn chiếu sáng chất
-                lượng cao, bao gồm bóng đèn LED, đèn năng lượng mặt trời, đèn
-                tiết kiệm năng lượng và các sản phẩm đèn decor tạo điểm nhấn cho
-                không gian sống và làm việc của bạn.
-              </p>
-
-              <div className="mb-12">
-                <h2 className="mb-6 text-2xl font-medium text-gray-900">
-                  Sản phẩm của chúng tôi
-                </h2>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="text-orange-500" />
-                    <span>Đèn LED</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="text-orange-500" />
-                    <span>Đèn năng lượng mặt trời</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="text-orange-500" />
-                    <span>Đèn tiết kiệm năng lượng</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-600">
-                    <CheckCircle className="text-orange-500" />
-                    <span>Đèn decor</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="w-full bg-gradient-to-br from-orange-100 to-white py-16">
-        <div className="mx-auto max-w-7xl px-4">
-          {/* Header */}
+        <div className="container mx-auto px-4">
           <div className="mb-6 flex items-center justify-center gap-2 text-primary">
             <span className="text-xl">✧</span>
             <span>Dịch Vụ</span>
           </div>
-
-          {/* Title */}
           <div className="mx-auto mb-16 max-w-3xl text-center text-main">
-            <h2 className="text-navy-900 mb-6 text-3xl font-extrabold md:text-4xl">
+            <h2 className="text-navy-900 mb-6 text-3xl font-bold md:text-4xl">
               Lý Do Chọn
               <br />
               Khang Minh Lighting ?
@@ -266,7 +56,6 @@ export default function Home() {
               đảm bảo quản áo của bạn nhận được sự chăm sóc xứng đáng.
             </p>
           </div>
-
           {/* Grid of features */}
           <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
             {/* Feature 1 */}
@@ -317,6 +106,410 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="">
+        <div className="container mx-auto px-4 py-10">
+          <div className="mb-6 flex items-center justify-center gap-2 text-primary">
+            <span className="text-xl">✧</span>
+            <span>Sản phẩm</span>
+          </div>
+          <div className="mx-auto mb-5 max-w-3xl text-center text-main">
+            <h2 className="text-navy-900 mb-6 text-3xl font-bold md:text-4xl">
+              Phong Cách Nổi Bật
+            </h2>
+            <p className="text-gray-600">
+              Cam kết của chúng tôi về chất lượng, sự tiện lợi và sự hài lòng
+              của khách hàng thúc đẩy mọi khía cạnh trong dịch vụ
+            </p>
+          </div>
+        </div>
+        <div className="relative h-fit w-full">
+          <Image
+            src="/assets/images/bg/home-3d-1.jpg"
+            alt="Product"
+            height={1000}
+            width={1000}
+            className="w-full object-cover"
+          />
+          <div className="absolute -top-10 left-1/2 block w-[300px] translate-x-[-50%] rounded-2xl bg-primary md:top-5 xl:top-10 xl:w-[380px] xl:gap-0 xl:rounded-3xl">
+            <div className="flex items-center justify-center gap-3 text-white">
+              <div className="px-2 py-2 text-[13px] font-semibold xl:px-4 xl:py-3 xl:text-[16px]">
+                Đèn trong nhà
+              </div>
+              <Switch className="" />
+              <div className="px-2 py-2 text-[13px] font-semibold xl:px-4 xl:py-3 xl:text-[16px]">
+                Đèn ngoài trời
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto px-4 py-10">
+          <div className="mb-6 flex items-center justify-center gap-2 text-primary">
+            <span className="text-xl">✧</span>
+            <span>Sản phẩm</span>
+          </div>
+          <div className="mx-auto mb-5 max-w-3xl text-center text-main">
+            <h2 className="text-navy-900 mb-6 text-3xl font-bold md:text-4xl">
+              Danh Sách Sản Phẩm
+            </h2>
+            <p className="text-gray-600">
+              Cam kết của chúng tôi về chất lượng, sự tiện lợi và sự hài lòng
+              của khách hàng thúc đẩy mọi khía cạnh trong dịch vụ
+            </p>
+          </div>
+          {/* Mobile */}
+          <div className="flex w-full flex-wrap items-start gap-2 lg:hidden">
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square w-[calc((100%-8px)/2)] rounded-md bg-primary">
+              <Image
+                src="/assets/images/bg/home-3d-1.jpg"
+                width={500}
+                height={500}
+                alt=""
+                className="h-full w-full rounded-md object-cover brightness-[80%]"
+              />
+              <div className="absolute bottom-5 left-5 text-white">
+                <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                  Đèn led
+                </h1>
+                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  Xem Thêm
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Laptop -> */}
+          <div className="hidden grid-cols-10 lg:grid">
+            <div className="col-span-5 space-y-2">
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-span-3 space-y-2">
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-span-2 space-y-2">
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+              <div className="relative aspect-square w-[calc(100%-8px)] rounded-md bg-primary">
+                <Image
+                  src="/assets/images/bg/home-3d-1.jpg"
+                  width={500}
+                  height={500}
+                  alt=""
+                  className="h-full w-full rounded-md object-cover brightness-[80%]"
+                />
+                <div className="absolute bottom-5 left-5 text-white">
+                  <h1 className="stroke-black text-[20px] font-bold shadow-md">
+                    Đèn led
+                  </h1>
+                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                    Xem Thêm
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="w-full bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 flex items-start justify-between md:items-end">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-orange-500">
+                <span className="text-xl">✧</span>
+                <span>Sản phẩm nổi bật</span>
+              </div>
+
+              <h2 className="text-navy-900 text-4xl font-bold text-main md:text-4xl">
+                Sản Phẩm Bán Chạy
+                <br />
+                Của Chúng Tôi
+              </h2>
+
+              <p className="max-w-2xl text-gray-600">
+                Sản phẩm bán chạy của chúng tôi bao gồm đèn LED tiết kiệm điện,
+                đèn năng lượng mặt trời thân thiện môi trường, đèn trang trí
+                decor tinh tế và các giải pháp chiếu sáng tiết kiệm năng lượng
+                cho mọi không gian.
+              </p>
+            </div>
+
+            <button className="hidden items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-white transition-colors hover:bg-orange-600 md:flex">
+              Xem Thêm
+            </button>
+          </div>
+
+          <Carousel className="w-full">
+            <CarouselContent className="">
+              {products.map((product) => (
+                <CarouselItem
+                  key={product.id}
+                  className="md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="group overflow-hidden rounded-lg">
+                    <div className="relative aspect-[4/3] bg-gray-200">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="bg-orange-500 p-6 text-white">
+                      <div className="mb-4 flex items-start justify-between">
+                        <h3 className="text-xl font-medium">{product.name}</h3>
+                        <button className="rounded-full bg-white p-2 text-orange-500 transition-colors hover:bg-orange-50">
+                          <ArrowRight className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-orange-50">{product.description}</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          <button className="mt-8 flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-white transition-colors hover:bg-orange-600 md:hidden">
+            Xem Thêm
+          </button>
         </div>
       </section>
       <section className="w-full bg-gray-100">
@@ -391,7 +584,7 @@ export default function Home() {
                     <div className="text-xl font-bold">95%</div>
                     <div className="text-gray-600">Giao hàng siêu nhanh</div>
                   </div>
-                </div>{" "}
+                </div>
                 <div className="flex items-center gap-3">
                   <div className="flex h-16 w-16 rounded-lg bg-gray-300" />
                   <div className="flex flex-col">
@@ -438,7 +631,7 @@ export default function Home() {
               <span className="text-xl">✧</span>
               <span>Quy Trình Của Chúng Tôi</span>
             </div>
-            <h2 className="text-navy-900 text-3xl font-extrabold text-main md:text-4xl">
+            <h2 className="text-navy-900 text-3xl font-bold text-main md:text-4xl">
               Đơn Giản, Nhanh Chóng <br /> Uy Tín, Đáng Tin Cậy
             </h2>
           </div>
@@ -477,70 +670,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="w-full bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="mb-8 flex items-start justify-between md:items-end">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 text-orange-500">
-                <span className="text-xl">✧</span>
-                <span>Sản phẩm nổi bật</span>
-              </div>
 
-              <h2 className="text-navy-900 text-4xl font-bold text-main md:text-4xl">
-                Sản Phẩm Bán Chạy
-                <br />
-                Của Chúng Tôi
-              </h2>
-
-              <p className="max-w-2xl text-gray-600">
-                Sản phẩm bán chạy của chúng tôi bao gồm đèn LED tiết kiệm điện,
-                đèn năng lượng mặt trời thân thiện môi trường, đèn trang trí
-                decor tinh tế và các giải pháp chiếu sáng tiết kiệm năng lượng
-                cho mọi không gian.
-              </p>
-            </div>
-
-            <button className="hidden items-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-white transition-colors hover:bg-orange-600 md:flex">
-              Xem Thêm
-            </button>
-          </div>
-
-          <Carousel className="w-full">
-            <CarouselContent className="">
-              {products.map((product) => (
-                <CarouselItem
-                  key={product.id}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="group overflow-hidden rounded-lg">
-                    <div className="relative aspect-[4/3] bg-gray-200">
-                      <Image
-                        src={product.image}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="bg-orange-500 p-6 text-white">
-                      <div className="mb-4 flex items-start justify-between">
-                        <h3 className="text-xl font-medium">{product.name}</h3>
-                        <button className="rounded-full bg-white p-2 text-orange-500 transition-colors hover:bg-orange-50">
-                          <ArrowRight className="h-4 w-4" />
-                        </button>
-                      </div>
-                      <p className="text-orange-50">{product.description}</p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-
-          <button className="mt-8 flex w-full items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 text-white transition-colors hover:bg-orange-600 md:hidden">
-            Xem Thêm
-          </button>
-        </div>
-      </section>
       <section className="w-full py-16">
         <div className="container mx-auto px-4">
           {/* Header */}

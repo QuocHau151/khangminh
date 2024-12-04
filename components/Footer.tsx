@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Ve Cong Ty */}
           <div>
-            <h3 className="mb-6 text-xl font-medium">Về Công Ty</h3>
+            <h3 className="mb-6 text-xl font-bold">Về Công Ty</h3>
             <ul className="space-y-4">
               <li>
                 <Link href="#" className="text-gray-600 hover:text-gray-900">
@@ -107,7 +107,7 @@ export default function Footer() {
 
           {/* Newsletter & Social */}
           <div>
-            <h3 className="mb-6 text-xl font-medium">Đăng kí nhận tin</h3>
+            <h3 className="mb-6 text-xl font-bold">Đăng kí nhận tin</h3>
             <p className="mb-4 text-gray-600">
               Đăng ký bản tin của chúng tôi để nhận được thông tin cập nhật và
               tin tức mới nhất mỗi ngày.
