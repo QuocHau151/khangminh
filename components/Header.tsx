@@ -162,7 +162,9 @@ export default function Header() {
                     Tìm Theo Nhóm Sản Phẩm
                   </h1>
                   <div className="flex items-center gap-2 rounded-2xl bg-primary px-4 py-2.5 text-white">
-                    <p className="text-[12px] font-bold"> Xem Tất Cả </p>
+                    <Link href="/san-pham" className="text-[12px] font-bold">
+                      Xem Tất Cả
+                    </Link>
                     <MoveUpRight className="size-5 font-bold" />
                   </div>
                 </div>

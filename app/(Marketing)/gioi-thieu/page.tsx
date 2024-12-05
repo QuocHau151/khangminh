@@ -21,6 +21,7 @@ export default function GioiThieu() {
   return (
     <>
       <BreadcrumbSection
+        image=""
         link="/gioi-thieu"
         name="Giới Thiệu"
         description=" Đối tác đáng tin cậy của bạn trong ngành chiếu sáng"

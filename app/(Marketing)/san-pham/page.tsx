@@ -36,6 +36,7 @@ export default function Products() {
   return (
     <>
       <BreadcrumbSection
+        image=""
         link="/san-pham"
         name="Sản Phẩm"
         description="Chúng tôi cung cấp các sản phẩm đèn led, đèn thông minh..."
@@ -121,7 +122,7 @@ export default function Products() {
             </SheetContent>
           </Sheet>
         </div>
-        <div className="mb-10 grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-4">
+        <div className="mb-10 grid grid-cols-2 gap-2.5 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
           {Array.from({ length: 8 }).map((_, index) => (
             <div
               key={index}

@@ -16,6 +16,7 @@ export default function GioiThieu() {
   return (
     <>
       <BreadcrumbSection
+      image=""
         link="/lien-he"
         name="Liên Hệ"
         description=" Kết nối với chúng tôi để được hỗ trợ Ngay"

@@ -60,6 +60,7 @@ export default function DanhMucSP() {
   return (
     <>
       <BreadcrumbSection
+        image=""
         link="/danh-muc-san-pham"
         name="Danh Mục Sản Phẩm"
         description=" Chúng tôi cung cấp giải pháp chiếu sáng chất lượng, tiết kiệm."

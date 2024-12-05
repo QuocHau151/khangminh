@@ -15,6 +15,7 @@ export default function BLog() {
   return (
     <>
       <BreadcrumbSection
+        image=""
         link="/tin-tuc"
         name="Tin Tức"
         description=" Cập nhật thông tin với các bài đăng mới nhất trên blog của chúng tôi"

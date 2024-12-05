@@ -11,14 +11,18 @@ export default function BreadcrumbSection({
   description,
   link,
   title,
+  image,
 }: {
   name: string;
   description: string;
   link: string;
   title: string;
+  image: string;
 }) {
   return (
-    <section className="h-[150px] w-full bg-slate-200 pt-[70px] md:h-[350px]">
+    <section
+      className={`h-[150px] w-full ${image ? "bg-[]" : "bg-slate-200"} pt-[70px] md:h-[350px]`}
+    >
       <div className="container flex h-full items-center justify-center px-4 md:justify-between">
         <div className="">
           <div className="mb-4 hidden items-center gap-2 italic text-primary md:flex">
