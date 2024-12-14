@@ -16,7 +16,6 @@ import {
   Phone,
   User,
 } from "lucide-react";
-import { EmblaOptionsType } from "embla-carousel";
 import Image from "next/image";
 import {
   Carousel,
@@ -29,18 +28,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { news, partners, steps, testimonials, products } from "@/common/data";
 
-const OPTIONS: EmblaOptionsType = {};
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
-
 export default function Home() {
   return (
     <>
       <Header />
-      <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      <EmblaCarousel />
       <section className="w-full bg-gradient-to-br from-orange-100 to-white py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-6 flex items-center justify-center gap-2 text-primary">
+          <div className="mb-2 flex items-center justify-center gap-2 text-primary">
             <span className="text-xl">✧</span>
             <span>Dịch Vụ</span>
           </div>
@@ -110,7 +105,7 @@ export default function Home() {
       </section>
       <section className="">
         <div className="container mx-auto px-4 py-10">
-          <div className="mb-6 flex items-center justify-center gap-2 text-primary">
+          <div className="mb-2 flex items-center justify-center gap-2 text-primary">
             <span className="text-xl">✧</span>
             <span>Sản phẩm</span>
           </div>
@@ -147,11 +142,11 @@ export default function Home() {
       </section>
       <section>
         <div className="container mx-auto px-4 py-10">
-          <div className="mb-6 flex items-center justify-center gap-2 text-primary">
+          <div className="mb-2 flex items-center justify-center gap-2 text-primary">
             <span className="text-xl">✧</span>
             <span>Sản phẩm</span>
           </div>
-          <div className="mx-auto mb-5 max-w-3xl text-center text-main">
+          <div className="mx-auto mb-5 max-w-3xl text-center text-main lg:mb-10">
             <h2 className="text-navy-900 mb-6 text-3xl font-bold md:text-4xl">
               Danh Sách Sản Phẩm
             </h2>
@@ -171,10 +166,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Ray Nam Châm
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -188,10 +183,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Năng Lượng Mặt Trời
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -205,10 +200,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Trang Trí
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -222,10 +217,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Văn Phòng
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -239,10 +234,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Pha
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -256,10 +251,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Đèn Led Dây
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -273,10 +268,10 @@ export default function Home() {
                 className="h-full w-full rounded-md object-cover brightness-[80%]"
               />
               <div className="absolute bottom-5 left-5 text-white">
-                <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                  Đèn led
+                <h1 className="mb-2 stroke-black text-[12px] font-bold shadow-md">
+                  Nguồn và Phụ Kiện
                 </h1>
-                <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                <div className="w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                   Xem Thêm
                 </div>
               </div>
@@ -295,9 +290,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Pha
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -312,9 +307,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Năng Lượng Mặt Trời
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -332,9 +327,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Ray Nam Châm
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -349,9 +344,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Văn Phòng
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -366,9 +361,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Âm Trần, Spotlight
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -386,7 +381,7 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Led Dây
                   </h1>
                   <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
@@ -403,9 +398,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Rọi
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -420,9 +415,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Đèn Trang Trí
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -437,9 +432,9 @@ export default function Home() {
                 />
                 <div className="absolute bottom-5 left-5 text-white">
                   <h1 className="stroke-black text-[20px] font-bold shadow-md">
-                    Đèn led
+                    Nguồn và Phụ Kiện
                   </h1>
-                  <div className="rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
+                  <div className="mt-2 w-fit rounded-lg bg-white px-3 py-1 text-[10px] font-medium text-primary">
                     Xem Thêm
                   </div>
                 </div>
@@ -512,8 +507,15 @@ export default function Home() {
           </button>
         </div>
       </section>
-      <section className="w-full bg-gray-100">
-        <div className="container px-4">
+      <section className="relative h-[1000px] w-full bg-slate-100 lg:h-[600px]">
+        <Image
+          src="/assets/images/bg/home-3d-.jpg"
+          width={1920}
+          height={1080}
+          alt=""
+          className="h-full w-full object-cover"
+        />
+        <div className="container absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] px-4">
           {/* Top Section */}
           <div className="relative grid gap-8 py-16 lg:grid-cols-2">
             {/* Customer satisfaction card */}
@@ -550,7 +552,7 @@ export default function Home() {
             </div>
 
             {/* Content */}
-            <div className="">
+            <div className="bg-slate-100 bg-transparent">
               <div className="mb-3 flex items-center gap-2 text-orange-500">
                 <span className="text-xl">✧</span>
                 <span>Chúng tôi là !</span>
@@ -604,7 +606,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* Bottom Section with Wave Background */}
       <section className="relative">
         <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-12 text-white">
           <div className="container">
@@ -670,7 +671,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="w-full py-16">
         <div className="container mx-auto px-4">
           {/* Header */}

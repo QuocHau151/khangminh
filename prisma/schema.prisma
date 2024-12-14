@@ -1,14 +1,109 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// prisma/schema.prisma
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
 generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+enum UserRole {
+  ADMIN
+  USER
+}
+
+enum StateUser {
+  Pending
+  Done
+  Cancel
+}
+
+enum StateOrder {
+  Pending
+  Done
+  Cancel
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  phone         String?
+  email         String?   @unique
+  address       String?
+  emailVerified DateTime?
+  state         StateUser @default(Pending)
+  image         String?
+  password      String?
+  role          UserRole  @default(USER)
+  accounts      Account[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model VerificationToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+model PasswordResetToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+model Category {
+  id           String    @id @default(cuid())
+  ten_danh_muc String
+  so_san_pham  Product[]
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  ten_san_pham    String
+  so_luong        Float
+  link_san_pham   String?
+  gia_san_pham    Float?
+  hinh_anh        String[]
+  mo_ta_san_pham  String?
+  kich_thuoc      String?
+  cong_suat       String?
+  vo_mau          String?
+  chat_lieu       String?
+  che_do_mau      String?
+  bao_hanh        String?
+  thuoc_tinh_khac Json?
+  id_danh_muc     String
+  danh_muc        Category @relation(fields: [id_danh_muc], references: [id], onDelete: Cascade)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+
+  @@index([id_danh_muc, ten_san_pham])
 }

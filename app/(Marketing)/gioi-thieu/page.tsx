@@ -16,7 +16,41 @@ import {
 import Image from "next/image";
 import BreadcrumbSection from "@/components/Breadcrumb";
 import { partners, steps } from "@/common/data";
-
+import { StickyScroll } from "@/components/ui/Sticky-scroll";
+const content = [
+  {
+    title: "Tầm Nhìn",
+    description:
+      "Công ty TNHH SẢN XUẤT VÀ XNK KHANG MINH mang trong mình nhiệt huyết của sức trẻ và tinh thần phát triển góp phần đóng góp vào xây dựng kinh tế xã hội . Với tầm nhìn trở thành đơn vị cung cấp thiết bị chiếu sáng chất lượng cao , gần gũi với môi trường dẫn đầu trong nghành tại thị trường Việt Nam .",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white"></div>
+    ),
+  },
+  {
+    title: "Sứ Mệnh",
+    description:
+      "Trở thành đơn vị uy tín cung cấp sản phẩm chất lượng đến với quý đối tác-khách hàng . Liên tục ngiên cứu và cải tiến nhằm đưa ra những giải pháp chiếu sáng tối ưu, góp phần bảo vệ môi trường và đóng góp vào sự phát triển của xã hội. Tạo ra môi trường làm việc chuyên nghiệp và thu nhập tốt cho cán bộ công nhân viên.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center text-white">
+        <Image
+          src="/linear.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt=""
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Giá trị cốt lõi",
+    description:
+      "“PHÁT TRIỂN BỀN VỮNG” được xây dựng dựa trên những giá trị thực tế mà doanh nghiệp mang lại cho người lao động – khách hàng – và xã hội . Đó cũng là kim chỉ nam tạo nên chỗ đứng cho doanh nghiệp trên thị trường.",
+    content: (
+      <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] text-white"></div>
+    ),
+  },
+];
 export default function GioiThieu() {
   return (
     <>
@@ -27,8 +61,8 @@ export default function GioiThieu() {
         description=" Đối tác đáng tin cậy của bạn trong ngành chiếu sáng"
         title="Khám phá về công ty chúng tôi"
       />
-      <section className="w-full bg-gradient-to-b from-purple-50/50 to-white pt-10 lg:pt-[80px]">
-        <div className="container mx-auto px-4 py-12">
+      <section className="w-full bg-gradient-to-b from-purple-50/50 to-white pt-10 md:pb-20 lg:pt-[80px]">
+        <div className="container mx-auto px-4 pt-12">
           <div className="flex flex-col gap-12 lg:flex-row">
             {/* Left column with images */}
             <div className="relative w-full lg:w-1/2">
@@ -103,6 +137,7 @@ export default function GioiThieu() {
           </div>
         </div>
       </section>
+      <StickyScroll content={content} />
       <section className="container flex flex-col items-center justify-between gap-10 px-2 py-10 lg:flex-row lg:py-20">
         <div className="lg:basis-1/2">
           <div className="mb-4 flex items-center gap-2 text-primary">

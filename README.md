@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+1. DEVELOPMENT
 
-## Getting Started
+# 1. Khởi tạo
+npx prisma init
 
-First, run the development server:
+# Cấu hình DATABASE_URL trong .env cho dev
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# 2. Tạo schema ban đầu
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Chỉnh sửa prisma/schema.prisma
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 3. Tạo migration đầu tiên
+npx prisma migrate dev --name init
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 4. Khi thay đổi schema
+npx prisma migrate dev --create-only --name change_description
 
-## Learn More
+# Review migration file trong prisma/migrations/
 
-To learn more about Next.js, take a look at the following resources:
+# 5. Test migration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npx prisma migrate reset --skip-generate # Reset DB dev xoá dữ liệu db
+npx prisma migrate dev # Apply migrations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. PRODUCTION
 
-## Deploy on Vercel
+# 1. Backup trước khi deploy
+pg*dump -U username -d database > backup*$(date +%Y%m%d).sql
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 2. Deploy migrations an toàn
+npx prisma generate
+npx prisma migrate deploy # Chỉ apply migrations chưa được apply
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# 3. Kiểm tra status
+npx prisma migrate status
+
+# 4. Nếu có lỗi - Rollback
+psql -U username -d database < backup_file.sql
