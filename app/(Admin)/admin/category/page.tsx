@@ -45,13 +45,13 @@ const data: Category[] = [
   },
 ];
 
-export type Category = {
+type Category = {
   id: string;
   ten_danh_muc: string;
   so_san_pham: string;
 };
 
-export const columns: ColumnDef<Category>[] = [
+const columns: ColumnDef<Category>[] = [
   {
     id: "select",
     header: ({ table }) => (

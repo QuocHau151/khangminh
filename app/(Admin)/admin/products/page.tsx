@@ -39,7 +39,7 @@ import Link from "next/link";
 import { ProductType } from "@/common/type";
 import { getAllProduct } from "@/action/product";
 
-export const columns: ColumnDef<ProductType>[] = [
+const columns: ColumnDef<ProductType>[] = [
   {
     id: "select",
     header: ({ table }) => (
